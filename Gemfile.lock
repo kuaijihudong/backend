@@ -185,6 +185,7 @@ GEM
       ref
     thor (0.19.1)
     thread_safe (0.3.5)
+    tilt (1.4.1)
     turbolinks (2.2.3)
       coffee-rails
     twitter-bootstrap-rails (2.2.8)
@@ -231,6 +232,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   therubyracer (~> 0.12.1)
+  tilt
   turbolinks (~> 2.2.1)
   twitter-bootstrap-rails (~> 2.2.8)
   uglifier

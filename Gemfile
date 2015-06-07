@@ -22,6 +22,7 @@ gem 'liquid'
 gem 'net-ssh'#, '~> 2.9.1', :git => "https://github.com/net-ssh/net-ssh"
 gem 'uglifier'
 gem 'coffee-rails'
+gem 'tilt'
 
 group :devlopment do
   gem "spring-commands-rspec"

@@ -2,13 +2,13 @@
 # lock '3.1.0'
 
 set :application, 'backend'
-set :repo_url, 'git@smsgithub.com:demohour/open-sms.git'
+set :repo_url, 'git@github.com:kuaijihudong/backend.git'
 # ask :branch, :platform_mode
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/data/www/open/sms'
+set :deploy_to, '/var/www/backend'
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -22,7 +22,7 @@ set :deploy_to, '/data/www/open/sms'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/config.yml config/unicorn/production.rb}
+set :linked_files, %w{config/database.yml config/config.yml}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
