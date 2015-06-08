@@ -22,7 +22,7 @@ set :deploy_to, '/var/www/backend'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/config.yml}
+set :linked_files, %w{config/database.yml config/config.yml config/unicorn/production.rb}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -51,7 +51,7 @@ namespace :deploy do
     #     execute :rake, "db:seed RAILS_ENV=production"
     #   end
     # end
-    # invoke 'unicorn:restart'
+    invoke 'unicorn:restart'
   end
 
 
