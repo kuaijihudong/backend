@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/yuc-zhu/capistrano3-unicorn
+  revision: 0990cb9359a3255bd27df81848ea0a44d36847a0
+  specs:
+    capistrano3-unicorn (0.1.1)
+      capistrano (>= 3.1.0)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -207,6 +214,7 @@ DEPENDENCIES
   capistrano (~> 3.1.0)
   capistrano-bundler (~> 1.1.2)
   capistrano-rails (~> 1.1)
+  capistrano3-unicorn!
   coffee-rails
   database_cleaner
   factory_girl_rails (~> 4.4.1)
