@@ -18,7 +18,7 @@ gem 'grape', '~> 0.6.1'
 gem 'newrelic_rpm'
 gem 'pony'
 gem 'liquid'
-# gem 'unicorn'
+gem 'unicorn'
 gem 'net-ssh'#, '~> 2.9.1', :git => "https://github.com/net-ssh/net-ssh"
 gem 'uglifier'
 gem 'coffee-rails'

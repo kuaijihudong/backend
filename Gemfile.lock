@@ -101,6 +101,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kgio (2.9.2)
     less (2.5.1)
       commonjs (~> 0.2.7)
     less-rails (2.5.0)
@@ -148,6 +149,7 @@ GEM
       activesupport (= 4.1.10)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.13.0)
     rake (10.4.2)
     ref (1.0.5)
     responders (1.0.0)
@@ -201,6 +203,10 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.8.2)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -239,3 +245,4 @@ DEPENDENCIES
   turbolinks (~> 2.2.1)
   twitter-bootstrap-rails (~> 2.2.8)
   uglifier
+  unicorn
