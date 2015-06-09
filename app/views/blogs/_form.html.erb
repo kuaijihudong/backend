@@ -1,0 +1,83 @@
+<!-- 配置文件 -->
+    <script type="text/javascript" src="/ueditor1_4_3-src/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor1_4_3-src/ueditor.all.js"></script>
+
+<h2>公告新闻编辑</h2>
+<div class="form">
+    <%=form_for :blog, html: { class: "niceform"} do |f|%>
+      <fieldset>
+          <dl>
+              <dt><%= f.label :type%></dt>
+              <dd><select size="1" name="gender" id="">
+                  <option value="">Select option 1</option>
+                  <option value="">Select option 2</option>
+                  <option value="">Select option 3</option>
+                  <option value="">Select option 4</option>
+                  <option value="">Select option 5</option>
+              </select></dd>
+          </dl>
+          <dl>
+              <dt><%= f.label :title%></dt>
+              <dd><%= f.text_field :title, size: 54 %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :description%></dt>
+              <dd><%= f.text_area :description, row: 5, cols: 36 %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :content%></dt>
+              <dd><%= f.text_area :content, row: 10, cols: 36 %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :banner%></dt>
+              <dd><%= f.file_field :banner %></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :from%></dt>
+              <dd><%= f.text_field :from, size: 54 %></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :tag%></dt>
+              <dd><%= f.text_field :tag, size: 54 %></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :seo_keywords%></dt>
+              <dd><%= f.text_field :seo_keywords, size: 54 %></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :seo_description%></dt>
+              <dd><%= f.text_area :seo_description, row: 5, cols: 36  %></dd>
+          </dl>
+
+
+           <dl class="submit">
+             <%= f.submit "发布", id: "submit" %>
+           </dl>
+
+
+
+      </fieldset>
+    <% end %>
+
+    <!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain">
+        这里写你的初始化内容
+    </script>
+
+
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+    </script>
+</div>

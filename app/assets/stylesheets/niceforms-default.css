@@ -49,7 +49,7 @@ line-height:32px;
 .NFTextareaTopLeft {background:#f2f2e6 url(/image/textarea-tl.gif) no-repeat 0 0;}
 .NFTextareaBottomLeft {background:#f2f2e6 url(/image/textarea-bl.gif) no-repeat 0 0;}
 .NFTextareaLeft, .NFTextareaRight, .NFTextareaLeftH, .NFTextareaRightH {float:left; padding-bottom:10px;}
-.NFTextareaLeft, .NFTextareaLeftH {width:10px;}
+.NFTextareaLeft, .NFTextareaLeftH {width:6px;}
 .NFTextareaLeft {background:url(/image/textarea-l-off.gif) repeat-y 0 0;}
 .NFTextareaLeftH {background:url(/image/textarea-l-over.gif) repeat-y 0 0;}
 .NFTextareaRight, .NFTextareaRightH {padding-right:5px; padding-bottom:0;}

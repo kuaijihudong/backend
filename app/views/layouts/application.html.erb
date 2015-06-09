@@ -44,10 +44,51 @@ ddaccordion.init({
 	<div class=<%= current_admin ? 'header' : 'header_login'%>>
     <div class="logo"><a href="#"><img src="<%= image_path('logo.gif')%>" alt="" title="" border="0" /></a></div>
     <% if current_admin %>
-      <div class="right_header">Welcome <%= current_admin.user_name%>, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <%= link_to "登出", destroy_admin_session_path, {class: "navbar-link", method: "delete"} %></div>
+      <div class="right_header">欢迎 <%= current_admin.user_name%>, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <%= link_to "登出", destroy_admin_session_path, {class: "navbar-link", method: "delete"} %></div>
       <div id="clock_a"></div>
+    </div>
+
+        <div class="main_content">
+
+          <div class="menu">
+            <ul>
+              <li><a class="current" href="/">首页</a></li>
+              <li><a href="">Manage Categories</a></li>
+              <li><a href="">Manage Users</a></li>
+
+
+              <li><a href="">Manage Orders</a></li>
+
+              </li>
+              <li><a href="">Settings</a></li>
+
+              <li><a href="">Templates</a></li>
+              <li><a href="">Custom details</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </div>
+          <div class="center_content">
+              <div class="left_content">
+                  <div class="sidebar_search">
+                      <form>
+                        <input type="text" name="" class="search_input" value="search keyword" onclick="this.value=''" />
+                        <input type="image" class="search_submit" src="<%= image_path('search.png')%>" />
+                      </form>
+                    </div>
+
+                    <div class="sidebarmenu">
+                        <a class="menuitem" href="">User Reference</a>
+                        <a class="menuitem" href="">Blue button</a>
+                        <a class="menuitem_green" href="">Green button</a>
+                        <a class="menuitem_red" href="">Red button</a>
+                    </div>
+                  </div>
+
+                  <div class="right_content">
+
+    <% else%>
+    </div>
     <% end%>
-  </div>
   <div class="flash" style="<%= current_admin ? '' : 'padding: 20px 0 0 145px;'%>">
   <% flash.each do |key, value| %>
     <div class="<%= key%>_box">
@@ -56,6 +97,12 @@ ddaccordion.init({
   <% end %>
 </div>
   <%= yield %>
+  <% if current_admin%>
+          </div>
+              <div class="clear"></div>
+            </div>
+          </div> <!--end of main content-->
+  <% end %>
     <div class=<%= current_admin ? 'footer' : 'footer_login'%>>
 
     	<div class="left_footer">KUAIJI | Powered by <a href="http://kuaijihudong.com">KUAIJI</a></div>
