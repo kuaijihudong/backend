@@ -1,0 +1,48 @@
+
+<%= content_for :title, "登陆"%>
+
+
+
+<div class="login_form">
+
+         <h3>快极互动后台登陆</h3>
+
+<!--          <a href="#" class="forgot_pass">Forgot password</a> -->
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{class: "niceform"}) do |f| %>
+
+
+  <fieldset>
+      <dl>
+          <dt><%= f.label :user_name %></dt>
+          <dd><%= f.text_field :user_name, autofocus: true, size: 54 %></dd>
+      </dl>
+      <dl>
+          <dt><%= f.label :password %></dt>
+          <dd><%= f.password_field :password, autocomplete: "off", size: 54 %></dd>
+      </dl>
+
+      <dl>
+          <dt><label></label></dt>
+          <dd>
+
+            <% if devise_mapping.rememberable? -%>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, class: "check_label" %>
+            <% end -%>
+
+          </dd>
+      </dl>
+
+       <dl class="submit">
+         <%= f.submit "登陆", id: "submit" %>
+       </dl>
+
+  </fieldset>
+
+
+
+<% end %>
+</div>
+<%#= render "devise/shared/links" %>

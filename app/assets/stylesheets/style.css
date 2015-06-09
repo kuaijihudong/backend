@@ -413,10 +413,10 @@ background-position:0px 10px;
 .warning_box{width:540px;clear:both;background:url(/images/warning.png) no-repeat left #fcfae9;
 border:1px #e9e6c7 solid;background-position:15px 10px;padding:20px 20px 15px 60px;margin:0 0 10px 0;}
 
-.valid_box{width:540px;clear:both;background:url(/images/valid.png) no-repeat left #edfce9;
+.notice_box{width:540px;clear:both;background:url(/images/valid.png) no-repeat left #edfce9;
 border:1px #cceac4 solid;background-position:15px 10px;padding:20px 20px 15px 60px;margin:0 0 10px 0;}
 
-.error_box{width:540px;clear:both;background:url(/images/error.png) no-repeat left #fce9e9;
+.alert_box{width:540px;clear:both;background:url(/images/error.png) no-repeat left #fce9e9;
 border:1px #eac7c7 solid;background-position:15px 10px;padding:20px 20px 15px 60px;margin:0 0 10px 0;}
 
 /*--------------*/
