@@ -24,6 +24,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'tilt'
 gem 'devise'
+gem 'devise-i18n'
 
 group :devlopment do
   gem "spring-commands-rspec"
