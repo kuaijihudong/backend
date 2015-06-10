@@ -25,6 +25,7 @@ gem 'coffee-rails'
 gem 'tilt'
 gem 'devise'
 gem 'devise-i18n'
+gem 'baidu_ueditor_rails', github: 'doabit/baidu_ueditor_rails'
 
 group :devlopment do
   gem "spring-commands-rspec"

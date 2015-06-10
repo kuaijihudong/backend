@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/doabit/baidu_ueditor_rails.git
+  revision: 9b7ae95d7c365a0fdd3407ac15721acad67067b7
+  specs:
+    baidu_ueditor_rails (0.0.1)
+      rails (>= 3.1.1)
+
+GIT
   remote: https://github.com/yuc-zhu/capistrano3-unicorn
   revision: 0990cb9359a3255bd27df81848ea0a44d36847a0
   specs:
@@ -223,6 +230,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  baidu_ueditor_rails!
   capistrano (~> 3.1.0)
   capistrano-bundler (~> 1.1.2)
   capistrano-rails (~> 1.1)

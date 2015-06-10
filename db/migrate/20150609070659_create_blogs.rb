@@ -9,7 +9,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string :from
       t.string :seo_keywords
       t.string :seo_description
-      t.integer :created_by 
+      t.integer :created_by
       t.timestamps
     end
   end

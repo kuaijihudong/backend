@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require baidu_ueditor
+//= require ueditor_custom_config
 //= require_tree .
