@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Case < ActiveRecord::Base
   validates_presence_of :name, :description, :case_type, :logo,
   :url, :images, :client_name, :location, :seo_keywords, :seo_description
