@@ -1,0 +1,9 @@
+zh-CN:
+  activerecord:
+    models:
+      contact: "留言"
+    attributes:
+      contact:
+        contact_person: "留言人"
+        contact_information: "联系方式"
+        contact_content: "内容"

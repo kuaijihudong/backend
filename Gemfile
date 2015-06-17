@@ -11,7 +11,7 @@ gem "therubyracer", '~> 0.12.1'
 gem "twitter-bootstrap-rails", '~> 2.2.8'
 # gem 'ckeditor', '~> 4.0.11'
 # gem 'ckeditor'#, :git => 'https://github.com/abdulsattar/ckeditor'
-gem 'paperclip', '~> 4.1.1'
+# gem 'paperclip', '~> 4.1.1'
 gem 'inherited_resources', '~> 1.4.1'
 gem "select2-rails"
 gem 'grape', '~> 0.6.1'
@@ -26,7 +26,7 @@ gem 'tilt'
 gem 'devise'
 gem 'devise-i18n'
 gem 'baidu_ueditor_rails', github: 'doabit/baidu_ueditor_rails'
-
+gem 'paperclip'
 group :devlopment do
   gem "spring-commands-rspec"
   gem 'spring'

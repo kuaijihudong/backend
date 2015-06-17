@@ -248,7 +248,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.15)
   net-ssh
   newrelic_rpm
-  paperclip (~> 4.1.1)
+  paperclip
   pony
   rails (~> 4.1.7)
   rspec-rails (~> 3.0.0.beta)

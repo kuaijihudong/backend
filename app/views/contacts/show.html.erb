@@ -1,0 +1,41 @@
+<%= content_for :title, "留言详情"%>
+
+<h2>留言详情</h2>
+<div class="form niceform">
+      <fieldset>
+          <dl>
+              <dt>留言人:</dt>
+              <dt style="text-align: left;"><%= @contact.contact_person %></dt>
+          </dl>
+          <dl>
+              <dt>联系方式:</dt>
+              <dt style="text-align: left;"><%= @contact.contact_information%></dt>
+          </dl>
+
+          <dl>
+              <dt>留言时间:</dt>
+              <dt style="text-align: left;"><%= @contact.created_at.strftime("%Y-%m-%d %H:%M:%S")%></dt>
+          </dl>
+
+          <dl>
+              <dt>内容:</dt>
+              <dt style="text-align: left;"><%= @contact.contact_content%></dt>
+          </dl>
+
+
+
+
+      </fieldset>
+      <%= link_to @contact, data: { confirm: '确认删除该留言吗?' }, :method => "delete", class: "bt_green"  do %>
+        <span class="bt_green_lft"></span>
+        <strong>删除留言</strong>
+        <span class="bt_green_r"></span>
+      <% end %>
+      <a href="<%= contacts_path%>" class="bt_green">
+        <span class="bt_green_lft"></span>
+        <strong>返回留言列表</strong>
+        <span class="bt_green_r"></span>
+      </a>
+
+
+</div>

@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      case: "案例"
+    attributes:
+      case:
+        name: "案例名称"
+        description: "案例简介"
+        case_type: "案例类型"
+        logo: "案例LOGO"
+        url: "案例链接"
+        images: "多图展示"
+        client_name: "客户名"
+        location: "客户地点"
+        seo_keywords: "SEO关键字"
+        seo_description: "SEO描述"

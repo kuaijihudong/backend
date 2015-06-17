@@ -1,5 +1,8 @@
 
 <h2>公告新闻编辑</h2>
+<% if @blog.errors.any? %>
+  <%= render partial: "application/err_msgs", locals: {resource: @blog} %>
+<% end %>
 <div class="form">
     <%=form_for @blog, html: { class: "niceform"} do |f|%>
       <fieldset>
@@ -16,12 +19,12 @@
 
           <dl>
               <dt><%= f.label :description%></dt>
-              <dd><%= f.text_area :description, row: 5, cols: 36 %></dd>
+              <dd><%= f.text_area :description, rows: 5, cols: 36 %></dd>
           </dl>
 
           <dl>
               <dt><%= f.label :content%></dt>
-              <dd><%= f.text_area :content, row: 100, cols: 36 %></dd>
+              <dd><%= f.text_area :content, rows: 100, cols: 36 %></dd>
           </dl>
 
           <dl>
@@ -50,7 +53,7 @@
 
           <dl>
               <dt><%= f.label :seo_description%></dt>
-              <dd><%= f.text_area :seo_description, row: 5, cols: 36  %></dd>
+              <dd><%= f.text_area :seo_description, rows: 5, cols: 36  %></dd>
           </dl>
 
 

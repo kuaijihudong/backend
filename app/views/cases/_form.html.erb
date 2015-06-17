@@ -1,0 +1,80 @@
+
+<h2>案例编辑</h2>
+
+<% if @case.errors.any? %>
+  <%= render partial: "application/err_msgs", locals: {resource: @case} %>
+<% end %>
+<div class="form">
+    <%=form_for @case, html: { class: "niceform", multipart: true }  do |f|%>
+      <fieldset>
+          <dl>
+              <dt><%= f.label :name%></dt>
+              <dd>
+                <%#= f.select(:blog_type, options_for_select(type_select), {},{size: 1}) %>
+                <%= f.text_field :name, size: 54%>
+</dd>
+          </dl>
+          <dl>
+              <dt><%= f.label :description%></dt>
+              <dd><%= f.text_area :description, rows: 5, cols: 36 %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :case_type%></dt>
+              <dd><%= f.select(:case_type, options_for_select(type_select), {},{size: 1}) %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :logo%></dt>
+              <dd><%#= f.file_field :logo_path %>
+              <%= f.file_field :logo, size: 54%></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :url%></dt>
+              <dd><%= f.text_field :url, size: 54 %></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :images%></dt>
+              <dd><%= f.text_field :images, size: 54 %></dd>
+          </dl>
+
+
+
+          <dl>
+              <dt><%= f.label :client_name%></dt>
+              <dd><%= f.text_field :client_name, size: 54 %></dd>
+          </dl>
+          <dl>
+              <dt><%= f.label :location%></dt>
+              <dd><%= f.text_field :location, size: 54 %></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :seo_keywords%></dt>
+              <dd><%= f.text_field :seo_keywords, size: 54 %></dd>
+          </dl>
+
+
+          <dl>
+              <dt><%= f.label :seo_description%></dt>
+              <dd><%= f.text_area :seo_description, rows: 5, cols: 36  %></dd>
+          </dl>
+
+
+           <dl class="submit">
+             <%= f.submit "创建", id: "submit" %>
+           </dl>
+
+
+
+      </fieldset>
+    <% end %>
+
+
+
+</div>

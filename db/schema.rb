@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609141317) do
+ActiveRecord::Schema.define(version: 20150617095150) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -46,6 +46,30 @@ ActiveRecord::Schema.define(version: 20150609141317) do
     t.boolean  "status",          default: true
     t.integer  "view_count",      default: 0
     t.integer  "blog_type",                      null: false
+  end
+
+  create_table "cases", force: true do |t|
+    t.string   "name",                null: false
+    t.string   "description",         null: false
+    t.integer  "case_type",           null: false
+    t.string   "logo_path",           null: false
+    t.string   "url",                 null: false
+    t.string   "images",              null: false
+    t.string   "client_name",         null: false
+    t.string   "location",            null: false
+    t.string   "seo_keywords",        null: false
+    t.string   "seo_description",     null: false
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "images_file_name"
+    t.string   "images_content_type"
+    t.integer  "images_file_size"
+    t.datetime "images_updated_at"
   end
 
   create_table "contacts", force: true do |t|

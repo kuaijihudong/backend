@@ -1,6 +1,9 @@
 class BlogsController < ApplicationController
 
   before_action :authenticate_admin!
+  def index
+    @blogs = Blog.all
+  end
 
   def new
     @blog = Blog.new
@@ -12,7 +15,7 @@ class BlogsController < ApplicationController
     @blog.created_by = current_admin.id
     if @blog.save
       flash[:notice] = "发布成功"
-      redirect_to root_path
+      redirect_to action: :index
     else
       render action: :new
     end
@@ -29,23 +32,22 @@ class BlogsController < ApplicationController
     # @blog.created_by = current_admin.id
     if @blog.update_attributes(permitted_params)
       flash[:notice] = "修改成功"
-      redirect_to root_path
+      redirect_to action: :index
     else
       render action: :edit
     end
   end
 
-  def delete
+  def destroy
     @blog = Blog.find_by_id(params[:id])
     @blog.delete
     flash[:notice] = "删除成功"
-    redirect_to root_path
+    redirect_to action: :index
   end
 
 
   private
   def permitted_params
-
     params.require(:blog).permit([:title, :blog_type, :description, :content,
         :banner, :seo_keywords, :seo_description, :from, :tag])
   end

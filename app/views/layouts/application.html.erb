@@ -53,18 +53,11 @@ ddaccordion.init({
           <div class="menu">
             <ul>
               <li><a class="current" href="/">首页</a></li>
-              <li><a href="">Manage Categories</a></li>
-              <li><a href="">Manage Users</a></li>
+              <li><%= link_to "新闻", blogs_path%></li>
+              <li><%= link_to "留言", contacts_path%></li>
+              <li><%= link_to "案例", cases_path%></li>
 
 
-              <li><a href="">Manage Orders</a></li>
-
-              </li>
-              <li><a href="">Settings</a></li>
-
-              <li><a href="">Templates</a></li>
-              <li><a href="">Custom details</a></li>
-              <li><a href="">Contact</a></li>
             </ul>
           </div>
           <div class="center_content">
@@ -97,6 +90,8 @@ ddaccordion.init({
   <% end %>
 </div>
   <%= yield %>
+
+    <%= render partial: "helper"%>
   <% if current_admin%>
           </div>
               <div class="clear"></div>

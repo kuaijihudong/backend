@@ -1,0 +1,48 @@
+<h2>留言一览</h2>
+
+
+<table id="rounded-corner" summary="">
+<thead>
+  <tr>
+        <th scope="col" class="rounded">留言人</th>
+        <th scope="col" class="rounded">联系方式</th>
+        <th scope="col" class="rounded">留言内容</th>
+        <th scope="col" class="rounded">是否已读</th>
+        <th scope="col" class="rounded">留言时间</th>
+        <th scope="col" class="rounded">详情</th>
+        <th scope="col" class="rounded-q4">删除</th>
+    </tr>
+</thead>
+<tbody>
+  <% if @contacts.blank? %>
+    <tr><td colspan="7">没有留言</td></tr>
+
+  <% else %>
+  <% @contacts.each do |contact|%>
+    <tr>
+      <td><%= contact.contact_person%></td>
+      <td><%= contact.contact_information%></td>
+      <td><%= contact.contact_content%></td>
+      <td><%= contact.is_read ? "已读" : "未读"%></td>
+      <td><%= contact.created_at.strftime("%Y-%m-%d %H:%M:%S")%></td>
+      <td><%= link_to image_tag("user_edit.png"), contact_path(contact)%></td>
+      <td>
+        <%= link_to image_tag("trash.png"), contact_path(contact), data: { confirm: '确认删除该留言吗?' }, :method => "delete" %>
+        </td>
+    </tr>
+    <% end %>
+  <% end%>
+
+
+
+</tbody>
+</table>
+
+<a href="<%= new_contact_path%>" class="bt_green"><span class="bt_green_lft"></span><strong>发表留言</strong><span class="bt_green_r"></span></a>
+<!--      <a href="#" class="bt_blue"><span class="bt_blue_lft"></span><strong>View all items from category</strong><span class="bt_blue_r"></span></a>
+ <a href="#" class="bt_red"><span class="bt_red_lft"></span><strong>Delete items</strong><span class="bt_red_r"></span></a> -->
+
+
+    <div class="pagination">
+    <span class="disabled"><< 上一页</span><span class="current">1</span><span class="disabled">下一页>></span>
+    </div>

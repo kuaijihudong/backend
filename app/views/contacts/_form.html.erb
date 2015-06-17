@@ -1,0 +1,38 @@
+
+<h2>创建留言</h2>
+
+<% if @contact.errors.any? %>
+  <%= render partial: "application/err_msgs", locals: {resource: @contact} %>
+<% end %>
+<div class="form">
+    <%=form_for @contact, html: { class: "niceform"} do |f|%>
+      <fieldset>
+          <dl>
+              <dt><%= f.label :contact_person%></dt>
+              <dd><%= f.text_field :contact_person, size: 54 %>
+
+</dd>
+          </dl>
+          <dl>
+              <dt><%= f.label :contact_information%></dt>
+              <dd><%= f.text_field :contact_information, size: 54 %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :contact_content%></dt>
+              <dd><%= f.text_area :contact_content, rows: 5, cols: 36 %></dd>
+          </dl>
+
+
+           <dl class="submit">
+             <%= f.submit "发布", id: "submit" %>
+           </dl>
+
+
+
+      </fieldset>
+    <% end %>
+
+
+
+</div>

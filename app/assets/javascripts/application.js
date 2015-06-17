@@ -16,3 +16,7 @@
 //= require baidu_ueditor
 //= require ueditor_custom_config
 //= require_tree .
+function change_navbar(number){
+  $("div.menu ul li a").removeClass("current");
+      $($("div.menu ul li a")[number]).addClass("current");
+}

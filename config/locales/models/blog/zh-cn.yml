@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    models:
+      blog: "新闻"
+    attributes:
+      blog:
+        title: "标题"
+        blog_type: "类型"
+        description: "内容简介"
+        content: "内容"
+        banner: "Banner"
+        from: "来源"
+        tag: "标签"
+        seo_keywords: "SEO关键字"
+        seo_description: "SEO说明"
