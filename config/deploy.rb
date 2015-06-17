@@ -44,6 +44,8 @@ set :default_env, { path: "/usr/local/ruby/bin:$PATH" }
 namespace :deploy do
   after :publishing, :restart
 
+
+
   desc 'Restart application'
   task :restart do
     # on roles(:worker), in: :groups, limit: 3, wait: 10 do
@@ -51,7 +53,8 @@ namespace :deploy do
     #     execute :rake, "db:seed RAILS_ENV=production"
     #   end
     # end
-    invoke 'unicorn:restart'
+      puts 11111
+      invoke 'unicorn:restart'
   end
 
 

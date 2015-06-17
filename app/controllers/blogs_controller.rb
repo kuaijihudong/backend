@@ -1,3 +1,4 @@
+# encoding: utf-8
 class BlogsController < ApplicationController
 
   before_action :authenticate_admin!
