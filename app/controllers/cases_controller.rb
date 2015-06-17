@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CasesController < ApplicationController
 
     before_action :authenticate_admin!
