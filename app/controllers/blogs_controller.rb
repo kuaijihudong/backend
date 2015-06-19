@@ -10,6 +10,10 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
+  def show
+    @blog = Blog.find_by_id(params[:id])
+  end
+
 
   def create
     @blog = Blog.new(permitted_params)

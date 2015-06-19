@@ -24,8 +24,7 @@ class CasesController < ApplicationController
 
     def show
       @case = Case.find_by_id(params[:id])
-      render json: {name: @case.name,
-        logo: "/system/cases/logos/000/000/00#{@case.id}/original/#{@case.logo_file_name}"}
+      
     end
 
     def edit

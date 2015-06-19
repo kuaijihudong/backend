@@ -9,4 +9,25 @@ class Case < ActiveRecord::Base
   validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
   has_attached_file :images#, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :images, :content_type => /\Aimage\/.*\Z/
+
+
+  def get_logo_path
+    if self.log_file_name
+      "/system/cases/logos/000/000/00#{self.id}/original/#{self.logo_file_name}"
+    else
+      ""
+    end
+  end
+
+  def get_images_path
+    if self.images_file_name
+      "/system/cases/images/000/000/00#{self.id}/original/#{self.images_file_name}"
+    else
+      ""
+    end
+  end
+
+  def type_name
+    TYPES[self.case_type]
+  end
 end
