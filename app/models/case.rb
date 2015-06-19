@@ -12,7 +12,7 @@ class Case < ActiveRecord::Base
 
 
   def get_logo_path
-    if self.log_file_name
+    if self.logo_file_name
       "/system/cases/logos/000/000/00#{self.id}/original/#{self.logo_file_name}"
     else
       ""
