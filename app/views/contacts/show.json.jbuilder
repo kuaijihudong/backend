@@ -1,1 +1,1 @@
-json.(@contact, :contact_information, :contact_person)
+json.(@contact, :contact_information, :contact_person, :contact_content)

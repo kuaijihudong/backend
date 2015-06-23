@@ -2,6 +2,7 @@
 class BlogsController < ApplicationController
 
   before_action :authenticate_admin!, except: [:index, :show]
+  before_action :auth, only: [:index, :show]
   def index
     @blogs = Blog.all
   end
