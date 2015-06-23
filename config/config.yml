@@ -1,0 +1,10 @@
+default: &default
+  apikey: "92a20dcb0fbafdc5928095d6b9cd97c101e65f0c"
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

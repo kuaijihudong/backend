@@ -1,7 +1,7 @@
 # encoding: utf-8
 class CasesController < ApplicationController
 
-    before_action :authenticate_admin!
+    before_action :authenticate_admin!, except: [:index, :show]
     def index
       @cases = Case.all
     end
@@ -24,7 +24,7 @@ class CasesController < ApplicationController
 
     def show
       @case = Case.find_by_id(params[:id])
-      
+
     end
 
     def edit
