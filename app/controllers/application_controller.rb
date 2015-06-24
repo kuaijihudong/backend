@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 
   def auth
-    if params[:apikey] != CONFIG["apikey"]
+    if !current_admin || params[:apikey] != CONFIG["apikey"] 
       render plain: "401 Unauthorized", status: 401
     end
   end
