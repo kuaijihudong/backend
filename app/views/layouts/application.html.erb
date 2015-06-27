@@ -44,7 +44,7 @@ ddaccordion.init({
 	<div class=<%= current_admin ? 'header' : 'header_login'%>>
     <div class="logo"><a href="#"><img src="<%= image_path('logo.gif')%>" alt="" title="" border="0" /></a></div>
     <% if current_admin %>
-      <div class="right_header">欢迎 <%= current_admin.user_name%>, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <%= link_to "登出", destroy_admin_session_path, {class: "navbar-link", method: "delete"} %></div>
+      <div class="right_header">欢迎 <%= current_admin.user_name%>, <a href="http://www.kuaijihudong.com">访问网站</a> | <a href="#" class="messages">(0) 消息</a> | <%= link_to "登出", destroy_admin_session_path, {class: "navbar-link", method: "delete"} %></div>
       <div id="clock_a"></div>
     </div>
 
@@ -64,16 +64,16 @@ ddaccordion.init({
               <div class="left_content">
                   <div class="sidebar_search">
                       <form>
-                        <input type="text" name="" class="search_input" value="search keyword" onclick="this.value=''" />
+                        <input type="text" name="" class="search_input" value="搜索关键字" onclick="this.value=''" />
                         <input type="image" class="search_submit" src="<%= image_path('search.png')%>" />
                       </form>
                     </div>
 
                     <div class="sidebarmenu">
                         <a class="menuitem" href="">User Reference</a>
-                        <a class="menuitem" href="">Blue button</a>
-                        <a class="menuitem_green" href="">Green button</a>
-                        <a class="menuitem_red" href="">Red button</a>
+                        <a class="menuitem" href="">蓝色按钮(备用)</a>
+                        <a class="menuitem_green" href="">绿色按钮(备用)</a>
+                        <a class="menuitem_red" href="">红色按钮(备用)</a>
                     </div>
                   </div>
 
@@ -102,7 +102,7 @@ ddaccordion.init({
     <div class=<%= current_admin ? 'footer' : 'footer_login'%>>
 
     	<div class="left_footer">KUAIJI | Powered by <a href="http://kuaijihudong.com">KUAIJI</a></div>
-    	<div class="right_footer"><a href="http://kuaijihudong.com"><img src="<%= image_path('indeziner_logo.gif')%>" alt="" title="" border="0" /></a></div>
+    	<div class="right_footer"><a href="http://kuaijihudong.com"><img src="<%= image_path('kuaiji_logo.gif')%>" alt="" title="" border="0" /></a></div>
 
     </div>
 
