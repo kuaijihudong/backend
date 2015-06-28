@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617095150) do
+ActiveRecord::Schema.define(version: 20150628053012) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,26 +33,29 @@ ActiveRecord::Schema.define(version: 20150617095150) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "blogs", force: true do |t|
-    t.string   "title",                          null: false
+    t.string   "title",                              null: false
     t.string   "tag"
-    t.text     "content",                        null: false
-    t.string   "description",                    null: false
+    t.text     "content",                            null: false
+    t.string   "description",                        null: false
     t.string   "from"
     t.string   "seo_keywords"
     t.string   "seo_description"
     t.integer  "created_by"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "status",          default: true
-    t.integer  "view_count",      default: 0
-    t.integer  "blog_type",                      null: false
+    t.boolean  "status",              default: true
+    t.integer  "view_count",          default: 0
+    t.integer  "blog_type",                          null: false
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   create_table "cases", force: true do |t|
     t.string   "name",                null: false
     t.string   "description",         null: false
     t.integer  "case_type",           null: false
-    t.string   "logo_path",           null: false
     t.string   "url",                 null: false
     t.string   "images",              null: false
     t.string   "client_name",         null: false
