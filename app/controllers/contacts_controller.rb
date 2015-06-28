@@ -1,7 +1,7 @@
 # encoding: utf-8
 class ContactsController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :show]
-  before_action :auth, only: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show, :create]
+  before_action :auth, only: [:index, :show, :create]
   def new
     @contact = Contact.new
   end
