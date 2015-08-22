@@ -1,0 +1,34 @@
+
+<h2>类型编辑</h2>
+
+<% if @cases_type.errors.any? %>
+  <%= render partial: "application/err_msgs", locals: {resource: @cases_type} %>
+<% end %>
+<div class="form">
+    <%=form_for @cases_type, html: { class: "niceform", multipart: true }  do |f|%>
+      <fieldset>
+          <dl>
+              <dt><%= f.label :name%></dt>
+              <dd>
+                <%#= f.select(:blog_type, options_for_select(type_select), {},{size: 1}) %>
+                <%= f.text_field :name, size: 54%>
+</dd>
+          </dl>
+          <dl>
+              <dt><%= f.label :description%></dt>
+              <dd><%= f.text_area :description, rows: 5, cols: 36 %></dd>
+          </dl>
+
+
+           <dl class="submit">
+             <%= f.submit "创建", id: "submit" %>
+           </dl>
+
+
+
+      </fieldset>
+    <% end %>
+
+
+
+</div>

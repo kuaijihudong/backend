@@ -14,3 +14,6 @@ zh-CN:
         location: "客户地点"
         seo_keywords: "SEO关键字"
         seo_description: "SEO描述"
+        finished_date: "完成时间"
+        tag_id: "标签"
+        cases_type_id: "类型"

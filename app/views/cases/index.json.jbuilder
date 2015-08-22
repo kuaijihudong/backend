@@ -3,4 +3,5 @@ json.array! @cases do |c|
   json.type  c.type_name
   json.logo_path c.get_logo_path
   json.images_path c.get_images_path
+  
 end

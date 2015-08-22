@@ -1,0 +1,2 @@
+module CasesTypesHelper
+end

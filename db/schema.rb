@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628053012) do
+ActiveRecord::Schema.define(version: 20150822031645) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -73,6 +73,20 @@ ActiveRecord::Schema.define(version: 20150628053012) do
     t.string   "images_content_type"
     t.integer  "images_file_size"
     t.datetime "images_updated_at"
+    t.string   "finished_date"
+    t.integer  "tag_id"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
+    t.integer  "cases_type_id"
+  end
+
+  create_table "cases_types", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "contacts", force: true do |t|
@@ -80,6 +94,13 @@ ActiveRecord::Schema.define(version: 20150628053012) do
     t.string   "contact_person"
     t.string   "contact_content"
     t.boolean  "is_read"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

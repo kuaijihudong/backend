@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :contacts
 
   resources :cases
+  resources :cases_types
+  resources :tags
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
