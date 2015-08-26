@@ -5,6 +5,7 @@ class CasesController < ApplicationController
     before_action :auth, only: [:index, :show]
     def index
       @cases = Case.all
+      
     end
 
     def new

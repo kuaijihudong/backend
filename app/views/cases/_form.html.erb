@@ -25,10 +25,26 @@
           </dl>
 
           <dl>
+              <dt><%= f.label :tag_id%></dt>
+              <dd><%= f.select(:tag_id, options_for_select(tag_type_select), {},{size: 1}) %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :cases_type_id%></dt>
+              <dd><%= f.select(:cases_type_id, options_for_select(case_type_select), {},{size: 1}) %></dd>
+          </dl>
+
+          <dl>
               <dt><%= f.label :logo%></dt>
               <dd><%#= f.file_field :logo_path %>
               <%= f.file_field :logo, size: 54%></dd>
           </dl>
+
+          <dl>
+              <dt><%= f.label :banner%></dt>
+              <dd><%= f.file_field :banner  %></dd>
+          </dl>
+
 
 
           <dl>
@@ -64,6 +80,12 @@
               <dt><%= f.label :seo_description%></dt>
               <dd><%= f.text_area :seo_description, rows: 5, cols: 36  %></dd>
           </dl>
+
+          <dl>
+              <dt><%= f.label :finished_date%></dt>
+              <dd><%= f.text_field :finished_date  %></dd>
+          </dl>
+
 
 
            <dl class="submit">

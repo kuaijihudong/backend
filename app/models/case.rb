@@ -30,6 +30,14 @@ class Case < ActiveRecord::Base
     end
   end
 
+  def get_banner_path
+    if self.banner_file_name
+      "/system/cases/images/000/000/00#{self.id}/original/#{self.banner_file_name}"
+    else
+      ""
+    end
+  end
+
   def type_name
     TYPES[self.case_type]
   end
