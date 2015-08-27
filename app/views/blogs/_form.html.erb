@@ -56,6 +56,11 @@
               <dd><%= f.text_area :seo_description, rows: 5, cols: 36  %></dd>
           </dl>
 
+          <dl>
+              <dt><%= f.label :published_date%></dt>
+              <dd><%= f.text_field :published_date, size: 54 %></dd>
+          </dl>
+
 
            <dl class="submit">
              <%= f.submit "发布", id: "submit" %>

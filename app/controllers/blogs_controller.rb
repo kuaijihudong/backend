@@ -55,6 +55,6 @@ class BlogsController < ApplicationController
   private
   def permitted_params
     params.require(:blog).permit([:title, :blog_type, :description, :content,
-        :banner, :seo_keywords, :seo_description, :from, :tag])
+        :banner, :seo_keywords, :seo_description, :from, :tag, :published_date])
   end
 end

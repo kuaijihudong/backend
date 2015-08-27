@@ -30,7 +30,7 @@
           <td><%= blog.tag%></td>
           <td><%= blog.view_count%></td>
           <td><%= Admin.find_by_id(blog.created_by).user_name%></td>
-          <td><%= blog.created_at.strftime("%Y-%m-%d %H:%M:%S")%></td>
+          <td><%= blog.published_date%></td>
           <td><%= link_to image_tag("user_edit.png"), edit_blog_path(blog)%></td>
           <td>
             <%= link_to image_tag("trash.png"), blog_path(blog), data: { confirm: '确认删除该新闻吗?' }, :method => "delete" %>
