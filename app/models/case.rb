@@ -8,7 +8,8 @@ class Case < ActiveRecord::Base
   TYPES = ["行业网站建设", "品牌创意设计", "移动终端", "软件开发"]
   include Paperclip::Glue
 
-  scope :
+
+  # scope :inner_images, ->(user_id){where(".id = ?", user_id)}
 
   has_attached_file :logo#, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
@@ -50,7 +51,31 @@ class Case < ActiveRecord::Base
     end
   end
 
+  def get_background_image_path
+    if self.background_image_file_name
+      "/system/cases/images/000/000/#{get_path}/original/#{self.background_image_file_name}"
+    else
+      ""
+    end
+  end
+
+  def get_homepage_image_path
+    if self.homepage_image_file_name
+      "/system/cases/images/000/000/#{get_path}/original/#{self.homepage_image_file_name}"
+    else
+      ""
+    end
+  end
+
   def type_name
     TYPES[self.case_type]
+  end
+
+
+  def inner_images
+    self.attachments.where(attachment_type: 0)
+  end
+  def out_images
+    self.attachments.where(attachment_type: 1)
   end
 end

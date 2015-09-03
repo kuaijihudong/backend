@@ -67,6 +67,6 @@ class CasesController < ApplicationController
     private
     def permitted_params
       params.require(:case).permit([:name, :description, :client_name, :location, :images,
-        :case_type, :seo_description, :seo_keywords, :logo, :url, :background_image, :homepage_image])
+        :case_type, :seo_description, :seo_keywords, :overview, :logo, :url, :background_image, :homepage_image])
     end
 end

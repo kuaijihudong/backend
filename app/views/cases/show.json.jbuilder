@@ -10,4 +10,5 @@ json.tag_name     @case.tag.try(:name)
 json.tag_id     @case.tag.try(:id)
 json.background_image @case.get_background_image_path
 json.homepage_image @case.get_homepage_image_path
-json.inner_images 
+json.inner_images @case.inner_images.collect(&:get_image_path)
+json.out_images @case.out_images.collect(&:get_image_path)

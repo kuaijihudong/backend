@@ -6,7 +6,7 @@ class Attachment < ActiveRecord::Base
 
 
   def get_image_path
-    if self.images_file_name
+    if self.image_file_name
       path = "00#{self.id}"
       path = path[path.length - 3 , path.length]
       "/system/attachments/images/000/000/#{path}/original/#{self.image_file_name}"
