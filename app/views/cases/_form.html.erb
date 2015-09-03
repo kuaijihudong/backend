@@ -58,7 +58,27 @@
               <dd><%= f.file_field :images, size: 54 %></dd>
           </dl>
 
+          <dl>
+            <dt>内页多图展示</dt>
+            <dd><%= file_field_tag "case[attachment][]"%></dd>
+            <a href="#" onclick="add_attachment(this);return false;" class="add_attachment">添加图片</a>
+          </dl>
+          <dl>
+            <dt>外页多图展示</dt>
+            <dd><%= file_field_tag "case[out_attachment][]"%></dd>
+            <a href="#" onclick="add_out_attachment(this);return false;" class="add_attachment">添加图片</a>
+          </dl>
 
+
+          <dl>
+              <dt><%= f.label :background_image%></dt>
+              <dd><%= f.file_field :background_image, size: 54 %></dd>
+          </dl>
+
+          <dl>
+              <dt><%= f.label :homepage_image%></dt>
+              <dd><%= f.file_field :homepage_image, size: 54 %></dd>
+          </dl>
 
           <dl>
               <dt><%= f.label :client_name%></dt>
@@ -81,6 +101,11 @@
               <dd><%= f.text_area :seo_description, rows: 5, cols: 36  %></dd>
           </dl>
 
+
+          <dl>
+              <dt><%= f.label :overview%></dt>
+              <dd><%= f.text_area :overview, rows: 30, cols: 36  %></dd>
+          </dl>
           <dl>
               <dt><%= f.label :finished_date%></dt>
               <dd><%= f.text_field :finished_date  %></dd>
@@ -97,6 +122,16 @@
       </fieldset>
     <% end %>
 
+<script type="text/javascript">
+  var editor = new UE.ui.Editor();
+  editor.render("case_overview");
+  function add_attachment(ele){
+    $(ele).parent().after('<dl><dt>内页多图展示</dt><dd><%= file_field_tag "case[attachment][]"%></dd><a href="#" onclick="add_attachment(this);return false;" class="add_attachment">添加图片</a></dl>');
+  };
+  function add_out_attachment(ele){
+    $(ele).parent().after('<dl><dt>外页多图展示</dt><dd><%= file_field_tag "case[out_attachment][]"%></dd><a href="#" onclick="add_out_attachment(this);return false;" class="add_attachment">添加图片</a></dl>');
+  }
+</script>
 
 
 </div>

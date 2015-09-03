@@ -3,7 +3,7 @@ source 'http://ruby.taobao.org/'
 
 gem 'rails', '~> 4.1.7'
 gem 'mysql2', '~> 0.3.15'
-gem 'turbolinks', '~> 2.2.1'
+# gem 'turbolinks', '~> 2.2.1'
 gem 'jquery-rails', '~> 3.1.0'
 gem 'jquery-migrate-rails', '~> 1.2.1'
 gem "therubyracer", '~> 0.12.1'

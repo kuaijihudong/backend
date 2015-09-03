@@ -5,7 +5,7 @@ class CasesController < ApplicationController
     before_action :auth, only: [:index, :show]
     def index
       @cases = Case.all
-      
+
     end
 
     def new
@@ -16,6 +16,16 @@ class CasesController < ApplicationController
     def create
       @case = Case.new(permitted_params)
       if @case.save
+        #内页
+        images = params[:case][:attachment]
+        images.each do |a|
+          Attachment.create(case: @case, image: a, attachment_type: 0)
+        end
+        #外页
+        out_images = params[:case][:out_attachment]
+        out_images.each do |a|
+          Attachment.create(case: @case, image: a, attachment_type: 1)
+        end
         flash[:notice] = "发布成功"
         redirect_to action: :index
       else
@@ -57,6 +67,6 @@ class CasesController < ApplicationController
     private
     def permitted_params
       params.require(:case).permit([:name, :description, :client_name, :location, :images,
-        :case_type, :seo_description, :seo_keywords, :logo, :url])
+        :case_type, :seo_description, :seo_keywords, :logo, :url, :background_image, :homepage_image])
     end
 end

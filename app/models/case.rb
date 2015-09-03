@@ -4,8 +4,11 @@ class Case < ActiveRecord::Base
   :url, :images, :client_name, :location, :seo_keywords, :seo_description
   belongs_to :cases_type
   belongs_to :tag
+  has_many :attachments
   TYPES = ["行业网站建设", "品牌创意设计", "移动终端", "软件开发"]
   include Paperclip::Glue
+
+  scope :
 
   has_attached_file :logo#, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
@@ -13,10 +16,19 @@ class Case < ActiveRecord::Base
   validates_attachment_content_type :images, :content_type => /\Aimage\/.*\Z/
   has_attached_file :banner#, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :banner, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :background_image#, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :background_image, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :homepage_image#, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :homepage_image, :content_type => /\Aimage\/.*\Z/
 
+  def get_path
+    path = "00#{self.id}"
+    path = path[path.length - 3 , path.length]
+    return path
+  end
   def get_logo_path
     if self.logo_file_name
-      "/system/cases/logos/000/000/00#{self.id}/original/#{self.logo_file_name}"
+      "/system/cases/logos/000/000/#{get_path}/original/#{self.logo_file_name}"
     else
       ""
     end
@@ -24,7 +36,7 @@ class Case < ActiveRecord::Base
 
   def get_images_path
     if self.images_file_name
-      "/system/cases/images/000/000/00#{self.id}/original/#{self.images_file_name}"
+      "/system/cases/images/000/000/#{get_path}/original/#{self.images_file_name}"
     else
       ""
     end
@@ -32,7 +44,7 @@ class Case < ActiveRecord::Base
 
   def get_banner_path
     if self.banner_file_name
-      "/system/cases/images/000/000/00#{self.id}/original/#{self.banner_file_name}"
+      "/system/cases/images/000/000/#{get_path}/original/#{self.banner_file_name}"
     else
       ""
     end

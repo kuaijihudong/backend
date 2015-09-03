@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827073942) do
+ActiveRecord::Schema.define(version: 20150902123352) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20150827073942) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "attachments", force: true do |t|
+    t.integer  "case_id",            null: false
+    t.integer  "attachment_type",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "blogs", force: true do |t|
     t.string   "title",                              null: false
@@ -54,15 +65,15 @@ ActiveRecord::Schema.define(version: 20150827073942) do
   end
 
   create_table "cases", force: true do |t|
-    t.string   "name",                null: false
-    t.string   "description",         null: false
-    t.integer  "case_type",           null: false
-    t.string   "url",                 null: false
-    t.string   "images",              null: false
-    t.string   "client_name",         null: false
-    t.string   "location",            null: false
-    t.string   "seo_keywords",        null: false
-    t.string   "seo_description",     null: false
+    t.string   "name",                          null: false
+    t.string   "description",                   null: false
+    t.integer  "case_type",                     null: false
+    t.string   "url",                           null: false
+    t.string   "images",                        null: false
+    t.string   "client_name",                   null: false
+    t.string   "location",                      null: false
+    t.string   "seo_keywords",                  null: false
+    t.string   "seo_description",               null: false
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -81,6 +92,15 @@ ActiveRecord::Schema.define(version: 20150827073942) do
     t.integer  "banner_file_size"
     t.datetime "banner_updated_at"
     t.integer  "cases_type_id"
+    t.string   "background_image_file_name"
+    t.string   "background_image_content_type"
+    t.integer  "background_image_file_size"
+    t.datetime "background_image_updated_at"
+    t.text     "overview"
+    t.string   "homepage_image_file_name"
+    t.string   "homepage_image_content_type"
+    t.integer  "homepage_image_file_size"
+    t.datetime "homepage_image_updated_at"
   end
 
   create_table "cases_types", force: true do |t|
